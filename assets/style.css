@@ -1,0 +1,11 @@
+#city {
+    color: red;
+}
+
+#date {
+    color: red;
+}
+
+.city-date {
+    display: inline;
+}
