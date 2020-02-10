@@ -23,6 +23,10 @@ body {
     color: white;
     background-color: black;
     height: 30px;
-    width: 100px;
+    width: 150px;
     ;
+}
+
+.my-card1, .my-card2, .my-card3, .my-card4, .my-card5 {
+    font-size: 14px;
 }

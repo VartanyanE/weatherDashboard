@@ -12,6 +12,7 @@ $(document).ready(function () {
     $('.my-card4').hide();
     $('.my-card5').hide();
     $('#search-history').hide();
+    $('#show-fiveday').hide();
 
     $("#search-button").on("click", function (e) {
 
@@ -85,6 +86,7 @@ $(document).ready(function () {
 
     function buttonClicked() {
         var city = $('#city-search').val().trim();
+
         ajaxCall(city);
         ajaxCallFiveDay(city);
         localStorage.setItem('history', city);
@@ -93,6 +95,7 @@ $(document).ready(function () {
         $('.my-card3').show();
         $('.my-card4').show();
         $('.my-card5').show();
+        $('#show-fiveday').show();
         $('#search-history').show();
         createButton();
 
@@ -149,22 +152,26 @@ $(document).ready(function () {
     }
 
     function getFiveDay(grabFiveDay) {
-        console.log(grabFiveDay);
 
         var icon1 = $('<img>');
         icon1.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[0].weather[0].icon + ".png");
+        $('#icon-fiveday1').empty();
         $('#icon-fiveday1').append(icon1);
         var icon2 = $('<img>');
         icon2.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[1].weather[0].icon + ".png");
+        $('#icon-fiveday2').empty();
         $('#icon-fiveday2').append(icon2);
         var icon3 = $('<img>');
         icon3.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[2].weather[0].icon + ".png");
+        $('#icon-fiveday3').empty();
         $('#icon-fiveday3').append(icon3);
         var icon4 = $('<img>');
         icon4.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[3].weather[0].icon + ".png");
+        $('#icon-fiveday4').empty();
         $('#icon-fiveday4').append(icon4);
         var icon5 = $('<img>');
         icon5.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[4].weather[0].icon + ".png");
+        $('#icon-fiveday5').empty();
         $('#icon-fiveday5').append(icon5);
 
         $("#temp-fiveday1").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[0].main.temp).toFixed(2) + " F");
