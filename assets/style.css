@@ -1,3 +1,7 @@
+body {
+    font-family: 'Lemonada', cursive;
+}
+
 .city-date {
     display: inline;
 }
@@ -13,4 +17,12 @@
 .my-card {
     margin-right: 20px;
     width: 160px;
+}
+
+.search-button {
+    color: white;
+    background-color: black;
+    height: 30px;
+    width: 100px;
+    ;
 }

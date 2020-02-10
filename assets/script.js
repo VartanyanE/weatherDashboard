@@ -4,13 +4,14 @@ $(document).ready(function () {
     var uvIndexURL = 'https://api.openweathermap.org/data/2.5/uvi'
     var fiveDayForecastURL = 'https://api.openweathermap.org/data/2.5/forecast'
     var uvIndex = $("#uv");
-
+    // var searchButton = $(".search-button")
 
     $('.my-card1').hide();
     $('.my-card2').hide();
     $('.my-card3').hide();
     $('.my-card4').hide();
     $('.my-card5').hide();
+    $('#search-history').hide();
 
     $("#search-button").on("click", function (e) {
 
@@ -80,19 +81,7 @@ $(document).ready(function () {
         return (tempKelvin - 273.15) * 9 / 5 + 32
     }
 
-    // function createButton() {
 
-
-    //     var cities = localStorage.getItem('history');
-    //     var searchHistory = $("<button>" + cities + "</button>");
-    //     searchHistory.on("click", function () {
-
-    //     })
-
-    //     searchHistory.addClass("btn btn-light")
-    //     $(".history").append(searchHistory);
-
-    // }
 
     function buttonClicked() {
         var city = $('#city-search').val().trim();
@@ -104,7 +93,8 @@ $(document).ready(function () {
         $('.my-card3').show();
         $('.my-card4').show();
         $('.my-card5').show();
-        // createButton();
+        $('#search-history').show();
+        createButton();
 
     }
 
@@ -202,6 +192,33 @@ $(document).ready(function () {
 
     }
 
+
+    function searchHistory(button) {
+        let city = searchButton[button].text();
+
+
+
+        ajaxCall(city);
+        ajaxCallFiveDay(city);
+    }
+    function createButton() {
+
+
+        var cities = localStorage.getItem('history');
+        var searchHistory = $("<button>" + cities + "</button>");
+        searchHistory.addClass("search-button")
+        $(".history").append(searchHistory);
+
+
+
+
+
+
+    }
+    $('.search-button').on("click", function () {
+        console.log("clicked");
+        searchHistory(button);
+    })
 });
 
 
