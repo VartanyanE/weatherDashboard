@@ -16,8 +16,8 @@
 <body>
 
     <div class="container-fluid">
-        <div class="jumbotron">
-            <h4 class="text-center" style="color:blue;">WEATHER DASHBOARD</h4>
+        <div class="jumbotron" style="background-color:black">
+            <h3 class="text-center" style="color:cornsilk">Weather Dashboard</h3>
 
         </div>
     </div>
@@ -26,7 +26,7 @@
             <div class="col-sm-3">
                 <form>
                     <div class="form-group">
-                        <label for="city-search">Search For A City:</label>
+                        <label for="city-search">Enter A City Name</label>
                         <input type="text" class="form-control" id="city-search">
 
                     </div>
@@ -50,21 +50,95 @@
 
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="row">
 
-            <div class="col-sm-3 history">
+            <div class="col-sm-1 history">
                 <br>
-                Search History:
+                <!-- Search History: -->
 
 
             </div>
-            <div class="col-sm-9">
-                <div id="forecast"></div>
+            <div class="col-sm-2">
+                <div class="card my-card1">
+
+                    <div class="card-body">
+                        <div id="fiveday1"></div>
+                        <div id=icon-fiveday1></div>
+                        <div id="temp-fiveday1"></div>
+                        <div id="humidity-fiveday1"></div>
+
+
+                    </div>
+                </div>
+
 
             </div>
+            <div class="col-sm-2">
+                <div class="card my-card2">
+
+                    <div class="card-body">
+                        <div id="fiveday2"></div>
+                        <div id=icon-fiveday2></div>
+                        <div id="temp-fiveday2"></div>
+                        <div id="humidity-fiveday2"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-2">
+                <div class="card my-card3">
+
+                    <div class="card-body">
+                        <div id="fiveday3"></div>
+                        <div id="icon-fiveday3"></div>
+                        <div id="temp-fiveday3"></div>
+                        <div id="humidity-fiveday3"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-2">
+                <div class="card my-card4">
+
+                    <div class="card-body">
+                        <div id="fiveday4"></div>
+                        <div id="icon-fiveday4"></div>
+                        <div id="temp-fiveday4"></div>
+                        <div id="humidity-fiveday4"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-2">
+                <div class="card my-card5">
+
+                    <div class="card-body">
+                        <div id="fiveday5"></div>
+                        <div id="icon-fiveday5"></div>
+                        <div id="temp-fiveday5"></div>
+                        <div id="humidity-fiveday5"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
     </div>
-
+    </div>
+    <div style="height:200px"></div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

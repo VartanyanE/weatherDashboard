@@ -1,11 +1,3 @@
-#city {
-    /* color: red; */
-}
-
-#date {
-    /* color: red; */
-}
-
 .city-date {
     display: inline;
 }
@@ -16,4 +8,9 @@
 
 #uv {
     color: red;
+}
+
+.my-card {
+    margin-right: 20px;
+    width: 160px;
 }
