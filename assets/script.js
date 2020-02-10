@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var apiKey = '166a433c57516f51dfab1f7edaed8413';
-    var currentWeatherURL = 'http://api.openweathermap.org/data/2.5/weather'
+    var currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather'
     var uvIndexURL = 'https://api.openweathermap.org/data/2.5/uvi'
     var fiveDayForecastURL = 'https://api.openweathermap.org/data/2.5/forecast'
     var uvIndex = $("#uv");
@@ -75,7 +75,7 @@ $(document).ready(function () {
         $("#humidity").text("Humidity: " + response.main.humidity + "%");
         $("#temp").text("Temp: " + convertKelvinToFahrenheit(response.main.temp).toFixed(2) + " F");
         var icon = $('<img>');
-        icon.attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
+        icon.attr("src", "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png");
         $('#icon').append(icon);
 
 
