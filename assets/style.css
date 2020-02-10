@@ -1,11 +1,19 @@
 #city {
-    color: red;
+    /* color: red; */
 }
 
 #date {
-    color: red;
+    /* color: red; */
 }
 
 .city-date {
     display: inline;
+}
+
+.history {
+    display: block;
+}
+
+#uv {
+    color: red;
 }
