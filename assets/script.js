@@ -69,6 +69,8 @@ $(document).ready(function () {
 
 
     function getWeather(response) {
+        console.log(response)
+
         $("#city").html("<h5>" + response.name + "</h5>");
         $('#date').text(moment().format("dddd, MMMM Do YYYY"));
         $("#wind").text("Wind Speed: " + response.wind.speed);
@@ -97,50 +99,81 @@ $(document).ready(function () {
     }
 
     function getFiveDay(grabFiveDay) {
+        for (let i = 0; i < 6; i++) {
+            var icon = $('<img>');
+            icon.attr("src", "https://openweathermap.org/img/w/" + grabFiveDay.list[i].weather[i].icon + ".png");
+            // $('#icon-fiveday1').empty();
+            $("#temp-fiveday1").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[i].main.temp).toFixed(2) + " F");
+            $("#humidity-fiveday1").text("Humidity: " + grabFiveDay.list[i].main.humidity + "%");
+            $('#icon-fiveday1').append(icon);
 
-        var icon1 = $('<img>');
-        icon1.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[0].weather[0].icon + ".png");
-        $('#icon-fiveday1').empty();
-        $('#icon-fiveday1').append(icon1);
-        var icon2 = $('<img>');
-        icon2.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[1].weather[0].icon + ".png");
-        $('#icon-fiveday2').empty();
-        $('#icon-fiveday2').append(icon2);
-        var icon3 = $('<img>');
-        icon3.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[2].weather[0].icon + ".png");
-        $('#icon-fiveday3').empty();
-        $('#icon-fiveday3').append(icon3);
-        var icon4 = $('<img>');
-        icon4.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[3].weather[0].icon + ".png");
-        $('#icon-fiveday4').empty();
-        $('#icon-fiveday4').append(icon4);
-        var icon5 = $('<img>');
-        icon5.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[4].weather[0].icon + ".png");
-        $('#icon-fiveday5').empty();
-        $('#icon-fiveday5').append(icon5);
+            var addDay = (moment().add(1, 'd').format("dddd, MMMM Do"));
+            $('#fiveday1').text(addDay);
 
-        $("#temp-fiveday1").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[0].main.temp).toFixed(2) + " F");
-        $("#temp-fiveday2").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[1].main.temp).toFixed(2) + " F");
-        $("#temp-fiveday3").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[2].main.temp).toFixed(2) + " F");
-        $("#temp-fiveday4").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[3].main.temp).toFixed(2) + " F");
-        $("#temp-fiveday5").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[4].main.temp).toFixed(2) + " F");
 
-        $("#humidity-fiveday1").text("Humidity: " + grabFiveDay.list[0].main.humidity + "%");
-        $("#humidity-fiveday2").text("Humidity: " + grabFiveDay.list[1].main.humidity + "%");
-        $("#humidity-fiveday3").text("Humidity: " + grabFiveDay.list[2].main.humidity + "%");
-        $("#humidity-fiveday4").text("Humidity: " + grabFiveDay.list[3].main.humidity + "%");
-        $("#humidity-fiveday5").text("Humidity: " + grabFiveDay.list[4].main.humidity + "%");
 
-        var addDay1 = (moment().add(1, 'd').format("dddd, MMMM Do"));
-        $('#fiveday1').text(addDay1);
-        var addDay2 = (moment().add(2, 'd').format("dddd, MMMM Do"));
-        $('#fiveday2').text(addDay2);
-        var addDay3 = (moment().add(3, 'd').format("dddd, MMMM Do"));
-        $('#fiveday3').text(addDay3);
-        var addDay4 = (moment().add(4, 'd').format("dddd, MMMM Do"));
-        $('#fiveday4').text(addDay4);
-        var addDay5 = (moment().add(5, 'd').format("dddd, MMMM Do"));
-        $('#fiveday5').text(addDay5);
+
+
+        }
+
+        // var icon2 = $('<img>');
+        // icon2.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[i].weather[0].icon + ".png");
+        // $('#icon-fiveday2').empty();
+
+
+
+
+
+
+
+
+
+
+
+
+        //     var icon1 = $('<img>');
+        // icon1.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[0].weather[0].icon + ".png");
+        // $('#icon-fiveday1').empty();
+        // $('#icon-fiveday1').append(icon1);
+        // var icon2 = $('<img>');
+        // icon2.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[1].weather[0].icon + ".png");
+        // $('#icon-fiveday2').empty();
+        // $('#icon-fiveday2').append(icon2);
+        // var icon3 = $('<img>');
+        // icon3.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[2].weather[0].icon + ".png");
+        // $('#icon-fiveday3').empty();
+        // $('#icon-fiveday3').append(icon3);
+        // var icon4 = $('<img>');
+        // icon4.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[3].weather[0].icon + ".png");
+        // $('#icon-fiveday4').empty();
+        // $('#icon-fiveday4').append(icon4);
+        // var icon5 = $('<img>');
+        // icon5.attr("src", "http://openweathermap.org/img/w/" + grabFiveDay.list[4].weather[0].icon + ".png");
+        // $('#icon-fiveday5').empty();
+        // $('#icon-fiveday5').append(icon5);
+
+        // $("#temp-fiveday1").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[0].main.temp).toFixed(2) + " F");
+        // $("#temp-fiveday2").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[1].main.temp).toFixed(2) + " F");
+        // $("#temp-fiveday3").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[2].main.temp).toFixed(2) + " F");
+        // $("#temp-fiveday4").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[3].main.temp).toFixed(2) + " F");
+        // $("#temp-fiveday5").text("Temp: " + convertKelvinToFahrenheit(grabFiveDay.list[4].main.temp).toFixed(2) + " F");
+
+        // $("#humidity-fiveday1").text("Humidity: " + grabFiveDay.list[0].main.humidity + "%");
+        // $("#humidity-fiveday2").text("Humidity: " + grabFiveDay.list[1].main.humidity + "%");
+        // $("#humidity-fiveday3").text("Humidity: " + grabFiveDay.list[2].main.humidity + "%");
+        // $("#humidity-fiveday4").text("Humidity: " + grabFiveDay.list[3].main.humidity + "%");
+        // $("#humidity-fiveday5").text("Humidity: " + grabFiveDay.list[4].main.humidity + "%");
+
+        // var addDay1 = (moment().add(1, 'd').format("dddd, MMMM Do"));
+        // $('#fiveday1').text(addDay1);
+        // var addDay2 = (moment().add(2, 'd').format("dddd, MMMM Do"));
+        // $('#fiveday2').text(addDay2);
+        // var addDay3 = (moment().add(3, 'd').format("dddd, MMMM Do"));
+        // $('#fiveday3').text(addDay3);
+        // var addDay4 = (moment().add(4, 'd').format("dddd, MMMM Do"));
+        // $('#fiveday4').text(addDay4);
+        // var addDay5 = (moment().add(5, 'd').format("dddd, MMMM Do"));
+        // $('#fiveday5').text(addDay5);
 
     }
 
